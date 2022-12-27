@@ -3,7 +3,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/nav_graph"
-  app:startDestination="@id/loginFragment">
+  app:startDestination="@id/splashFragment">
 
   <fragment
     android:id="@+id/loginFragment"
@@ -34,6 +34,15 @@
       android:id="@+id/settingsFragment"
       android:name="com.levente.project_retrofit.fragment.SettingsFragment"
       android:label="SettingsFragment" />
+  <fragment
+      android:id="@+id/splashFragment"
+      android:name="com.levente.project_retrofit.fragment.SplashFragment"
+      android:label="fragment_splash"
+      tools:layout="@layout/fragment_splash" />
+  <fragment
+      android:id="@+id/createTaskFragment"
+      android:name="com.levente.project_retrofit.fragment.CreateTaskFragment"
+      android:label="CreateTaskFragment" />
 
 
 </navigation>

@@ -17,6 +17,7 @@ class SettingsViewModel(private val repository: ThreeTrackerRepository): ViewMod
     }
 
     var setting : MutableLiveData<SettingsResponse?> = MutableLiveData()
+    var isLoggedIn : MutableLiveData<Boolean> = MutableLiveData()
 
     init{
         getSettings()
@@ -37,17 +38,22 @@ class SettingsViewModel(private val repository: ThreeTrackerRepository): ViewMod
 
                 if (response?.isSuccessful == true) {
                     Log.d(TAG, "Get profile response: ${response.body()}")
-
                     val settings = response.body()
                     settings?.let {
+                        isLoggedIn.value = true
+                        Log.d("LOGGED", isLoggedIn.value.toString())
                         setting.value = it
                     }
                 } else {
                     Log.d(TAG, "Get user error response: ${response?.errorBody()}")
+                    isLoggedIn.value = false
+                    Log.d("LOGGED", isLoggedIn.value.toString())
                 }
 
             } catch (e: Exception) {
                 Log.d(TAG, "SettingsViewModel - getSettings() failed with exception: ${e.message}")
+                isLoggedIn.value = false
+                Log.d("LOGGED", isLoggedIn.value.toString())
             }
         }
 

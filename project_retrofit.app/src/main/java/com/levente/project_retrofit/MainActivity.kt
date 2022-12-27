@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageButton
+//import android.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -16,8 +19,6 @@ class MainActivity : AppCompatActivity() {
 
     val TAG: String = javaClass.simpleName
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "onCreate() called!")
         super.onCreate(savedInstanceState)
@@ -28,23 +29,33 @@ class MainActivity : AppCompatActivity() {
         //val logoAnimation = findViewById<View>(R.id.logo_animation) as AnimationDrawable
         //logoAnimation.start()
 
-        navView.selectedItemId = R.id.navigation_activities
+        navView.selectedItemId = R.id.navigation_tasks
 
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_activities,
-                R.id.navigation_tasks,
-                R.id.navigation_groups,
-                R.id.navigation_settings
-            )
-        )
+//        val appBarConfiguration = AppBarConfiguration(
+//            setOf(
+//                R.id.navigation_activities,
+//                R.id.navigation_tasks,
+//                R.id.navigation_groups,
+//                R.id.navigation_settings
+//            )
+//        )
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        val button = findViewById<ImageButton>(R.id.add_task)
+
+        button.setOnClickListener{
+            navController.navigate(R.id.createTaskFragment)
+        }
 
         navView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.loginFragment -> {
+                    nav_view.visibility = View.GONE
+                    navView.visibility = View.GONE
+                }
+                R.id.splashFragment -> {
                     nav_view.visibility = View.GONE
                     navView.visibility = View.GONE
                 }

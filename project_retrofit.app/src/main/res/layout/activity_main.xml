@@ -64,6 +64,16 @@
   <!--    app:layout_constraintTop_toTopOf="@id/quiz_title"-->
   <!--    app:layout_constraintVertical_bias="0.7"/>-->
 
+<!--  <androidx.appcompat.widget.Toolbar-->
+<!--      android:id="@+id/toolbar"-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="wrap_content"-->
+<!--      android:background="?attr/colorPrimary"-->
+<!--      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--      tools:ignore="MissingConstraints" />-->
+<include layout="@layout/my_actionbar">
+
+</include>
   <com.google.android.material.bottomnavigation.BottomNavigationView
       android:id="@+id/nav_view"
       android:layout_width="0dp"
@@ -80,7 +90,6 @@
       android:name="androidx.navigation.fragment.NavHostFragment"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:background="@color/teal_200"
       app:defaultNavHost="true"
       app:layout_constraintBottom_toTopOf="@id/nav_view"
       app:layout_constraintLeft_toLeftOf="parent"

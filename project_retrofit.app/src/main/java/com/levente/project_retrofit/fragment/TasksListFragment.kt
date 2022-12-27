@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -39,6 +40,7 @@ class TasksListFragment : Fragment(R.layout.fragment_tasks_list), TasksListAdapt
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_tasks_list, container, false)
         recyclerView = view.findViewById(R.id.recycler_view)

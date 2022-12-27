@@ -61,8 +61,8 @@ class SettingsFragment : Fragment() {
             myJob.text = "Szamitastechnika"
             mentorName.text = "Lorinczi Zoltan"
             mentorText.text = "Lorinczi Zoltan mentorlatja"
-            phoneNr.text = "0777777777"
-            location.text = "Sepsiszentgyorgy"
+            phoneNr.text = "0769420911"
+            location.text = "Marosvasarhely"
             Glide
                 .with(requireContext())
                 .load("https://flyinryanhawks.org/wp-content/uploads/2016/08/profile-placeholder.png")

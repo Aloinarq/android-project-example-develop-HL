@@ -1,9 +1,6 @@
 package com.levente.project_retrofit.api
 
-import com.levente.project_retrofit.api.model.LoginRequestBody
-import com.levente.project_retrofit.api.model.LoginResponse
-import com.levente.project_retrofit.api.model.SettingsResponse
-import com.levente.project_retrofit.api.model.TaskResponse
+import com.levente.project_retrofit.api.model.*
 import retrofit2.Response
 
 class ThreeTrackerRepository {
@@ -23,4 +20,13 @@ class ThreeTrackerRepository {
     suspend fun getSettings(token: String): Response<SettingsResponse> {
         return RetrofitInstance.USER_API_SERVICE.getSettings(token)
     }
+
+    suspend fun createTask(taskRequestBody: TaskRequestBody, token: String): Response<TaskRequestBody> {
+        return RetrofitInstance.USER_API_SERVICE.createTask(taskRequestBody, token)
+    }
+
+    suspend fun getActivities(token: String): Response<List<ActivityResponse>> {
+        return RetrofitInstance.USER_API_SERVICE.getActivities(token)
+    }
+
 }

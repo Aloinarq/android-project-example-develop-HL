@@ -19,7 +19,7 @@ data class SettingsResponse (
     var type: Int,
 
     @SerializedName("location")
-    var location: Int,
+    var location: String,
 
     @SerializedName("phone_number")
     var phoneNumber: Int,

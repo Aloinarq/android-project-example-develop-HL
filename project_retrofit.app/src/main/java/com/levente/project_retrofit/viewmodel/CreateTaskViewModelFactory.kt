@@ -4,9 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.Factory
 import com.levente.project_retrofit.api.ThreeTrackerRepository
 
-class SettingsViewModelFactory(private val repository: ThreeTrackerRepository) : Factory {
-
+class CreateTaskViewModelFactory(private val repository: ThreeTrackerRepository) : Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return SettingsViewModel(repository) as T
+        return CreateTaskViewModel(repository) as T
     }
 }
