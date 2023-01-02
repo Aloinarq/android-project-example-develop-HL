@@ -18,8 +18,9 @@ import com.levente.project_retrofit.api.model.TaskResponse
 import com.levente.project_retrofit.viewmodel.TasksViewModel
 import com.levente.project_retrofit.viewmodel.TasksViewModelFactory
 
-class TasksListFragment : Fragment(R.layout.fragment_tasks_list), TasksListAdapter.OnItemClickListener,
-        TasksListAdapter.OnItemLongClickListener {
+class TasksListFragment : Fragment(R.layout.fragment_tasks_list),
+    TasksListAdapter.OnItemClickListener,
+    TasksListAdapter.OnItemLongClickListener {
 
     companion object {
         private val TAG: String = javaClass.simpleName
@@ -36,9 +37,9 @@ class TasksListFragment : Fragment(R.layout.fragment_tasks_list), TasksListAdapt
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         (requireActivity() as AppCompatActivity).supportActionBar?.show()
         // Inflate the layout for this fragment
@@ -59,10 +60,10 @@ class TasksListFragment : Fragment(R.layout.fragment_tasks_list), TasksListAdapt
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.addItemDecoration(
-                DividerItemDecoration(
-                        activity,
-                        DividerItemDecoration.VERTICAL
-                )
+            DividerItemDecoration(
+                activity,
+                DividerItemDecoration.VERTICAL
+            )
         )
         recyclerView.setHasFixedSize(true)
     }

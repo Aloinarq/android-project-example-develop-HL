@@ -29,4 +29,15 @@ class ThreeTrackerRepository {
         return RetrofitInstance.USER_API_SERVICE.getActivities(token)
     }
 
+    suspend fun updateProfile(profileRequestBody: UpdateProfileRequestBody, token: String): Response<UpdateProfileRequestBody>{
+        return RetrofitInstance.USER_API_SERVICE.updateProfile(profileRequestBody,token)
+    }
+
+    suspend fun getDepartments(token: String): Response<List<DepartmentResponse>> {
+        return RetrofitInstance.USER_API_SERVICE.getDepartments(token)
+    }
+
+    suspend fun getUsers(token: String): Response<List<SettingsResponse>> {
+        return RetrofitInstance.USER_API_SERVICE.getUsers(token)
+    }
 }

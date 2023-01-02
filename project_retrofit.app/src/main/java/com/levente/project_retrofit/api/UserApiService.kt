@@ -23,4 +23,13 @@ interface UserApiService {
 
     @GET(BackendConstants.GET_ACTIVITIES_URL)
     suspend fun getActivities(@Header(BackendConstants.HEADER_TOKEN) token: String): Response<List<ActivityResponse>>
+
+    @POST(BackendConstants.POST_UPDATE_PROFILE)
+    suspend fun updateProfile(@Body profileRequest : UpdateProfileRequestBody, @Header(BackendConstants.HEADER_TOKEN) token: String): Response<UpdateProfileRequestBody>
+
+    @GET(BackendConstants.GET_DEPARTMENTS_URL)
+    suspend fun getDepartments(@Header(BackendConstants.HEADER_TOKEN) token: String): Response<List<DepartmentResponse>>
+
+    @GET(BackendConstants.GET_USERS_URL)
+    suspend fun getUsers(@Header(BackendConstants.HEADER_TOKEN) token: String): Response<List<SettingsResponse>>
 }

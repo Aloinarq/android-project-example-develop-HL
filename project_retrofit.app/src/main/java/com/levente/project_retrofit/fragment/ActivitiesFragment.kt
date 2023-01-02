@@ -20,7 +20,8 @@ import com.levente.project_retrofit.api.ThreeTrackerRepository
 import com.levente.project_retrofit.api.model.ActivityResponse
 import com.levente.project_retrofit.viewmodel.ActivitiesViewModel
 
-class ActivitiesFragment : Fragment(R.layout.fragment_tasks_list), ActivitiesAdapter.OnItemClickListener,
+class ActivitiesFragment : Fragment(R.layout.fragment_tasks_list),
+    ActivitiesAdapter.OnItemClickListener,
     ActivitiesAdapter.OnItemLongClickListener {
 
     companion object {

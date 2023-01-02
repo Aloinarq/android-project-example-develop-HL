@@ -43,6 +43,14 @@
       android:id="@+id/createTaskFragment"
       android:name="com.levente.project_retrofit.fragment.CreateTaskFragment"
       android:label="CreateTaskFragment" />
+  <fragment
+      android:id="@+id/updateProfileFragment"
+      android:name="com.levente.project_retrofit.fragment.UpdateProfileFragment"
+      android:label="UpdateProfileFragment" />
+  <fragment
+      android:id="@+id/departmentsFragment"
+      android:name="com.levente.project_retrofit.fragment.DepartmentsFragment"
+      android:label="DepartmentsFragment" />
 
 
 </navigation>

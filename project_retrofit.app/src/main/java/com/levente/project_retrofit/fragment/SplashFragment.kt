@@ -16,7 +16,7 @@ import com.levente.project_retrofit.viewmodel.SettingsViewModel
 import com.levente.project_retrofit.viewmodel.SettingsViewModelFactory
 
 class SplashFragment : Fragment() {
-    private lateinit var settingsViewModel : SettingsViewModel
+    private lateinit var settingsViewModel: SettingsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +33,11 @@ class SplashFragment : Fragment() {
         Log.d("SplashFragment", "onCreateView called splash")
         val view = inflater.inflate(R.layout.fragment_splash, container, false)
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-
-        settingsViewModel.isLoggedIn.observe(viewLifecycleOwner){
-            if (it==true){
+        settingsViewModel.isLoggedIn.observe(viewLifecycleOwner) {
+            if (it == true) {
                 Thread.sleep(2000)
                 findNavController().navigate(R.id.listFragment)
-            }
-            else
-            {
+            } else {
                 Thread.sleep(2000)
                 findNavController().navigate(R.id.loginFragment)
             }

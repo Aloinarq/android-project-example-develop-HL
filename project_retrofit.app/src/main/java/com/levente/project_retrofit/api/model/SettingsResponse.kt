@@ -22,11 +22,12 @@ data class SettingsResponse (
     var location: String,
 
     @SerializedName("phone_number")
-    var phoneNumber: Int,
+    var phoneNumber: String,
 
     @SerializedName("department_id")
     var departmentId: Int,
 
-    //TODO IMAGE
+    @SerializedName("image")
+    var image : String
 
 )

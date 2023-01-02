@@ -20,7 +20,7 @@ import com.levente.project_retrofit.viewmodel.LoginViewModel
 import com.levente.project_retrofit.viewmodel.LoginViewModelFactory
 import kotlinx.android.synthetic.main.my_actionbar.*
 
-class CreateTaskFragment : Fragment(){
+class CreateTaskFragment : Fragment() {
     companion object {
         private val TAG: String = javaClass.simpleName
     }
@@ -43,6 +43,10 @@ class CreateTaskFragment : Fragment(){
 
         val titleEditText: EditText = view.findViewById(R.id.taskName)
         val descriptionEditText: EditText = view.findViewById(R.id.taskDescription)
+        val assignedToEditText: EditText = view.findViewById(R.id.taskAssigned)
+        val priorityEditText: EditText = view.findViewById(R.id.taskPriority)
+        val deadlineEditText: EditText = view.findViewById(R.id.taskDeadline)
+        val departmentEditText: EditText = view.findViewById(R.id.taskDepartment)
         val button: Button = view.findViewById(R.id.createTaskButton)
 
         Log.d(
@@ -55,7 +59,15 @@ class CreateTaskFragment : Fragment(){
 
         button.setOnClickListener {
 
-            createTaskViewModel.createTask(titleEditText.text.toString(), descriptionEditText.text.toString(), 68, 1, 1625942327, 2, 1)
+            createTaskViewModel.createTask(
+                titleEditText.text.toString(),
+                descriptionEditText.text.toString(),
+                assignedToEditText.text.toString().toInt(),
+                priorityEditText.text.toString().toInt(),
+                deadlineEditText.text.toString().toInt(),
+                departmentEditText.text.toString().toInt(),
+                1
+            )
 
             createTaskViewModel.isSuccessful.observe(this.viewLifecycleOwner) {
                 Log.d(TAG, "Task created successfully = $it")

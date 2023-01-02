@@ -47,6 +47,7 @@
         android:layout_width="@dimen/task_list_profile_image_width"
         android:layout_height="@dimen/task_list_profile_image_width"
         android:contentDescription="Owner's profile picture"
+        android:src="@drawable/yuumi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"

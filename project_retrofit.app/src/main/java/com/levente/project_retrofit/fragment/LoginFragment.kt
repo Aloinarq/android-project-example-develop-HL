@@ -30,9 +30,11 @@ class LoginFragment : Fragment() {
         val factory = LoginViewModelFactory(ThreeTrackerRepository())
         loginViewModel = ViewModelProvider(this, factory)[LoginViewModel::class.java]
     }
+
     fun View.remove() {
         this.visibility = View.GONE
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
